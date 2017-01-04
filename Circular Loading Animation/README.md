@@ -1,0 +1,1 @@
+![Loading Animation](circularAnimation.gif)
