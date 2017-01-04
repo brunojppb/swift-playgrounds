@@ -51,9 +51,9 @@ extension LoadingCircleView: CAAnimationDelegate {
     }
 }
 
-let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 370, height: 370))
-containerView.backgroundColor = UIColor.brown
-let circleSize: CGFloat = 30
+let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 500, height: 500))
+containerView.backgroundColor = UIColor.black
+let circleSize: CGFloat = 100
 PlaygroundPage.current.liveView = containerView
 PlaygroundPage.current.needsIndefiniteExecution = true
 
@@ -64,20 +64,21 @@ circleView.layer.borderWidth = 2
 circleView.translatesAutoresizingMaskIntoConstraints = false
 
 var constraints = [NSLayoutConstraint]()
+
 constraints.append(NSLayoutConstraint(item: circleView,
-                                      attribute: .left,
+                                      attribute: .centerX,
                                       relatedBy: .equal,
                                       toItem: containerView,
-                                      attribute: .left,
+                                      attribute: .centerX,
                                       multiplier: 1,
-                                      constant: 10))
+                                      constant: 0))
 constraints.append(NSLayoutConstraint(item: circleView,
-                                      attribute: .bottom,
+                                      attribute: .centerY,
                                       relatedBy: .equal,
                                       toItem: containerView,
-                                      attribute: .bottom,
+                                      attribute: .centerY,
                                       multiplier: 1,
-                                      constant: -10))
+                                      constant: 0))
 constraints.append(NSLayoutConstraint(item: circleView,
                                       attribute: .width,
                                       relatedBy: .equal,
@@ -96,4 +97,5 @@ constraints.append(NSLayoutConstraint(item: circleView,
 NSLayoutConstraint.activate(constraints)
 
 circleView.animate(with: 1)
+
 
